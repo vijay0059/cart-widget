@@ -4,5 +4,7 @@ import {LISTDEAILS} from './list-details'
   providedIn: 'root',
 })
 export class ListService{
-  getHeroes() { return LISTDEAILS; }
+  getProducts() { 
+    return LISTDEAILS; 
+  }
 }

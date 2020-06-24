@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import {List} from './list';
 import {ListService} from './service';
 @Component({
@@ -6,13 +6,17 @@ import {ListService} from './service';
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ]
 })
-export class AppComponent  {
+export class AppComponent implements OnInit {
   name = 'Angular 6';
   lists: List[];
   addedCart = 0;
 
-  constructor(listService: ListService) {
-    this.lists = listService.getHeroes();
+  constructor(public listService: ListService) {
+   
+  }
+
+  ngOnInit() {
+    this.lists = this.listService.getProducts();
   }
   addCart() {
     this.addedCart +=1
