@@ -11,9 +11,8 @@ export class AppComponent  {
   lists: List[];
   addedCart = 0;
 
-  constructor(heroService: ListService) {
-    this.lists = heroService.getHeroes();
-    console.log(this.lists);
+  constructor(listService: ListService) {
+    this.lists = listService.getHeroes();
   }
   addCart() {
     this.addedCart +=1
